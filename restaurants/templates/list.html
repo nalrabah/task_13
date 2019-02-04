@@ -28,9 +28,31 @@
                 <a href="{% url 'restaurant-detail' restaurant.id %}" class="btn btn-outline-dark">View</a>
             </li>
           </ul>
+          <button onclick="restaurant_favorite({{restaurant.id}})">
+    favorite <span id="fav-{{restaurant.id}}"></span>
+</button>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<script type="text/javascript">
+function restaurant_favorite(id){
+    $.ajax(
+        {
+            type:'GET',
+            url: '/favorite/' + id + '/',
+            error: function(){
+                console.log('error');
+            },
+            success: function(data){ 
+              if (data.action ==== 'like'){
+              alert("like")
+              }
+            },
+        }
+    );
+}
+</script>
 {% endblock content %}
 
