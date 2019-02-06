@@ -9,8 +9,8 @@ class RestaurantForm(forms.ModelForm):
         exclude = ['owner',]
 
         widgets = {
-        	'opening_time': forms.TimeInput(attrs={'type':'time'}),
-        	'closing_time': forms.TimeInput(attrs={'type':'time'}),
+            'opening_time': forms.TimeInput(attrs={'type':'time'}),
+            'closing_time': forms.TimeInput(attrs={'type':'time'}),
         }
 
 
